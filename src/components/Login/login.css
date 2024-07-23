@@ -1,0 +1,16 @@
+.login-google-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26.1px;
+    letter-spacing: -0.30000001192092896px;
+    text-align: center;
+}
+
+.login-popup {
+    background: linear-gradient(138.97deg, #111214 5.16%, #121212 105.18%);
+    border: 1px solid #343A40;
+}
+
+.sign-up-with-google {
+    border: 1px solid #707172;
+}

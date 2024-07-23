@@ -1,0 +1,1 @@
+export const BASE_URL = "https://hiring.reachinbox.xyz/api/v1";

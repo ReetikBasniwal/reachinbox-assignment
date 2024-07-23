@@ -1,0 +1,36 @@
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.sidebar .icon {
+  width: 24px;
+  height: 24px;
+  margin: 20px 0;
+}
+
+.sidebar.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.sidebar.light .icon {
+  fill: #000;
+}
+
+.sidebar.dark {
+  background: #101113;
+  color: #fff;
+}
+
+.sidebar.dark .icon {
+  fill: #fff;
+}
+
+.toggle-theme {
+  margin-bottom: 20px;
+}
