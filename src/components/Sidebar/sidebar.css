@@ -3,14 +3,30 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding-top: 10px;
 }
 
-.sidebar .icon {
+/* .sidebar .icon {
   width: 24px;
   height: 24px;
   margin: 20px 0;
+} */
+
+.nav-items-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35rem;
+    justify-content: space-around;
+}
+
+.nav-icon-div {
+}
+
+.nav-icon {
 }
 
 .sidebar.light {

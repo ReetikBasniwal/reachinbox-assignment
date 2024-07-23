@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     isDarkMode: true,
+    mails: [],
 };
 
 const actionSlice = createSlice({
@@ -10,6 +11,9 @@ const actionSlice = createSlice({
     reducers: {
         setDarkMode: (state, action) => {
             state.isDarkMode = action.payload;
+        },
+        setMails: (state, action) => {
+            state.mails = action.payload;
         }
     }
 })

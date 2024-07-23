@@ -1,0 +1,13 @@
+.inbox-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20rem;
+    background: black;
+    padding: 1rem;
+}
+
+.allinbox-text {
+    font-style: Open Sans;
+    color: #4285F4;
+}

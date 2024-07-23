@@ -1,0 +1,13 @@
+.mail-conv-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: black;
+    border: 1px solid #33383F;
+}
+
+.mail-conv-header {
+    height: 70px;
+    border-bottom: 1px solid #33383F;
+    padding: 1rem;
+}
