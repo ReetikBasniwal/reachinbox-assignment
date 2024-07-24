@@ -11,3 +11,35 @@
     border-bottom: 1px solid #33383F;
     padding: 1rem;
 }
+
+
+/* EACH MAIL */
+
+.thread-date-div {
+    border: 1px solid #F8FAFC33;
+    height: 1px;
+}
+
+.thread-date {
+    white-space: nowrap; /* Prevents wrapping */
+    text-align: center;
+    background: #171819;
+    padding: 0.2rem 0.5rem;
+}
+
+.thread-container {
+    border: 1px solid #343A40;
+    border-radius: 5px;
+    background: #141517;
+    display: flex;
+    flex-direction: column;
+}
+
+.reply-btn {
+    background: linear-gradient(91.73deg, #4B63DD -2.99%, rgba(5, 36, 191, 0.99) 95.8%);
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+}

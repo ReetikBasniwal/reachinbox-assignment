@@ -6,6 +6,7 @@ import Inbox from '../../components/Inbox/Inbox';
 import axios from 'axios';
 import { BASE_URL } from '../../config/global_config';
 import MailConv from '../../components/MailConversation/MailConv';
+import SenderDetail from '../../components/SenderDetail/SenderDetail';
 
 function Onebox() {
   const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
@@ -15,10 +16,10 @@ function Onebox() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(mails.length === 0 && authToken?.length > 0){
+    // if(mails.length === 0 && authToken?.length > 0){
       const fetchMails = async () => {
         try {
-          const url = `${BASE_URL}/onebox/list`;
+          const url = `${BASE_URL}/onebox`;
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${authToken}`,
@@ -32,7 +33,7 @@ function Onebox() {
         }
       };
       fetchMails();
-    }
+    // }
     
   }, [mails, authToken])
 
@@ -43,7 +44,7 @@ function Onebox() {
       <div className='onebox-container'>
         <Inbox/>
         <MailConv />
-        <Inbox />
+        <SenderDetail />
       </div>
     </div>
   );

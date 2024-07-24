@@ -1,3 +1,4 @@
-.mail-prev {
-    border-top: 1px solid #33383F
+.mail-prev-container {
+    border-top: 1px solid #33383F;
+    height: 6rem;
 }

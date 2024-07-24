@@ -1,0 +1,17 @@
+.senderdetail-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20rem;
+    background: black;
+    padding: 1rem 0.5rem;
+    border: 1px solid #33383F;
+}
+
+.info-header {
+    background: #23272C;
+    border-radius: 8px;
+    display: flex;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem 0;
+}

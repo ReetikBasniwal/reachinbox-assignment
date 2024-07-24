@@ -1,0 +1,82 @@
+.email-reply-modal {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: #1a1a1a;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 47rem;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    border: 1px solid #41464B;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #41464B;
+    margin-bottom: 10px;
+    padding: 0.2rem 1rem 0.2rem 2rem;
+    background: #23272C;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    white-space: nowrap;
+    display: flex;
+    border-bottom: 1px solid #34383D;
+    display: flex;
+    justify-content: center;
+    padding: 0.3rem 1rem;
+  }
+
+  .form-group > label {
+    margin-right: 0.4rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: none;
+    padding: 0.2rem;
+    color: white;
+    outline: none;
+  }
+  
+  textarea {
+    height: 280px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+  }
+  
+  .send-button {
+    background: linear-gradient(91.73deg, #4B63DD -2.99%, rgba(5, 36, 191, 0.99) 95.8%);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .additional-options button {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+  }
