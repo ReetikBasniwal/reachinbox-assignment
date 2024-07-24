@@ -6,7 +6,7 @@ export const googleLogin = createAsyncThunk(
   'auth/googleLogin',
   async (_, { rejectWithValue }) => {
     try {
-      window.location.href = `${BASE_URL}/auth/google-login?redirect_to=http://localhost:3000/auth/callback`;
+      window.location.href = `${BASE_URL}/auth/google-login?redirect_to=${window.location.host}/auth/callback`;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }

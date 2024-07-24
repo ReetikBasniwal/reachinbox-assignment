@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './onebox.css'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import TopBar from '../../components/Topbar/Topbar';
 import Inbox from '../../components/Inbox/Inbox';
 import axios from 'axios';
@@ -9,17 +9,15 @@ import MailConv from '../../components/MailConversation/MailConv';
 import SenderDetail from '../../components/SenderDetail/SenderDetail';
 
 function Onebox() {
-  const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
-  const { user } = useSelector((state) => state.auth);
   const mails = useSelector(state => state.oneboxReducer.mails);
+  const { user } = useSelector((state) => state.auth);
   const authToken = useSelector(state => state.auth.token);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     // if(mails.length === 0 && authToken?.length > 0){
       const fetchMails = async () => {
         try {
-          const url = `${BASE_URL}/onebox`;
+          const url = `${BASE_URL}/onebox/list`;
           const response = await axios.get(url, {
             headers: {
               Authorization: `Bearer ${authToken}`,
@@ -36,6 +34,8 @@ function Onebox() {
     // }
     
   }, [mails, authToken])
+
+  if(!user || !authToken) return;
 
   return (
     <div className="onebox">

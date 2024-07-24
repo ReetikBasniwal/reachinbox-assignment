@@ -3,9 +3,8 @@
     flex-direction: column;
     height: 100%;
     width: 20rem;
-    background: black;
     padding: 1rem;
-    border: 1px solid #33383F;
+    border: 1px solid;
 }
 
 .allinbox-text {
@@ -15,5 +14,12 @@
 
 .new-msg-count {
     color: #5C7CFA;
+}
+
+.dark-count {
     background: #222426;
+}
+
+.light-count {
+    background: #ECEFF3;
 }

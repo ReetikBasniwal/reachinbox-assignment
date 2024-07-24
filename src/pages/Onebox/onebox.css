@@ -5,10 +5,18 @@
     width: 100%;
 }
 
-  .onebox-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+.onebox-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.border-light {
+  border-color: #E0E0E0 !important;
+}
+
+.border-dark {
+  border-color: #33383F !important;
 }

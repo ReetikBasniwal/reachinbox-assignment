@@ -13,18 +13,11 @@ import { ReactComponent as InboxIcon } from '../../assets/icons/inbox.svg';
 // import { ReactComponent as UserAvatar } from './icons/user-avatar.svg';
 
 const Sidebar = () => {
-
-  const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
   const { user } = useSelector((state) => state.auth);
-
-  console.log(user, "user in side bar")
-
-//   const toggleTheme = () => {
-//     // setDarkMode(!darkMode);
-//   };
+  const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
 
   return (
-    <div className={`sidebar ${isDarkMode ? 'dark' : 'light'} border-right`}>
+    <div className={`sidebar ${isDarkMode ? 'darkSidebar border-dark' :'light border-light'} light border-right`}>
         <MailIcon className="" />
 
         <nav className='nav-items-container'>
@@ -38,8 +31,8 @@ const Sidebar = () => {
         </nav>
 
         <div className='d-flex align-items-center justify-content-center'>
-            <dir className={`avatar bg-white text-black p-0`}>
-                <span className=''>{user.firstName[0]?.toUpperCase() +user?.lastName[0]?.toUpperCase()}</span>
+            <dir className={`avatar dark:bg-white bg-black p-0`}>
+                <span className='dark:text-black text-white'>{user.firstName[0]?.toUpperCase() +user?.lastName[0]?.toUpperCase()}</span>
             </dir>
         </div>
     </div>

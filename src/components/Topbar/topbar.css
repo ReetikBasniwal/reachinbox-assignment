@@ -1,4 +1,63 @@
 .topbar-container {
     height: 64px;
+    background: white;
+}
+
+.darkprop {
     background: #343A40;
+    color: white;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-switch {
+    width: 48px;
+    height: 24px;
+    border-radius: 12px;
+    position: relative;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.dark {
+    background-color: #333;
+}
+
+.toggle-switch.light {
+    background-color: #ccc;
+}
+
+.toggle-switch .toggle-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+}
+
+.toggle-switch .toggle-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.toggle-switch .sun-icon {
+    order: 1;
+}
+
+.toggle-switch .moon-icon {
+    order: 2;
+}
+
+.toggle-switch .hidden {
+    display: none;
+}
+
+.toggle-switch .w-4 {
+    z-index: 1;
 }

@@ -3,15 +3,21 @@
     flex-direction: column;
     height: 100%;
     width: 20rem;
-    background: black;
     padding: 1rem 0.5rem;
-    border: 1px solid #33383F;
+    border: 1px solid;
 }
 
 .info-header {
-    background: #23272C;
     border-radius: 8px;
     display: flex;
     padding: 0.4rem 0.8rem;
     margin: 1rem 0;
+}
+
+.info-header-dark {
+    background: #23272C;
+}
+
+.info-header-light {
+    background: #ECEFF3;
 }

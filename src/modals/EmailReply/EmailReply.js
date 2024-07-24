@@ -1,9 +1,15 @@
 import React from 'react';
 import './EmailReplyModal.css';
+import { useSelector } from 'react-redux';
 
-const EmailReply = ({ isOpen, closeModal }) => {
-    
-    if(!isOpen) return;
+const EmailReply = ({ isOpen, closeModal, info }) => {
+    console.log(info, "user")
+
+  const { user } = useSelector((state) => state.auth);
+
+
+  if(!isOpen || !user) return;
+
   return (
     <div className="email-reply-modal">
         <div className="modal-header font-normal">
@@ -13,15 +19,15 @@ const EmailReply = ({ isOpen, closeModal }) => {
         <form className='text-sm'>
             <div className="form-group">
                 <label className='font-thin'>To :</label>
-                <input className='' type="email" defaultValue="jeanne@icloud.com" />
+                <input className='' type="email" defaultValue={info.fromEmail} />
             </div>
             <div className="form-group">
                 <label className='font-thin'>From :</label>
-                <input className='' type="email" defaultValue="peter@reachinbox.com" />
+                <input className='' type="email" defaultValue={user.email} disabled />
             </div>
             <div className="form-group">
                 <label className='font-thin'>Subject :</label>
-                <input className='' type="text" defaultValue="Warmup Welcome" />
+                <input className='' type="text" />
             </div>
             <div className="form-group font-normal">
                 <textarea placeholder="Hi Jeanne," />

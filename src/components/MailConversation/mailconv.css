@@ -2,13 +2,15 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: black;
-    border: 1px solid #33383F;
+    border: 1px solid;
 }
 
+.light-bg{
+    background: #ECEFF3;
+}
 .mail-conv-header {
     height: 70px;
-    border-bottom: 1px solid #33383F;
+    border-bottom: 1px solid;
     padding: 1rem;
 }
 
@@ -16,23 +18,34 @@
 /* EACH MAIL */
 
 .thread-date-div {
-    border: 1px solid #F8FAFC33;
+    border: 1px solid;
     height: 1px;
+}
+
+.light-date-border {
+    border-color: #E0E0E0 !important;
+}
+
+.dark-date-border {
+    border-color: #F8FAFC33 !important;
 }
 
 .thread-date {
     white-space: nowrap; /* Prevents wrapping */
     text-align: center;
-    background: #171819;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
 }
 
 .thread-container {
-    border: 1px solid #343A40;
+    border: 1px solid;
     border-radius: 5px;
-    background: #141517;
     display: flex;
     flex-direction: column;
+}
+
+.dark-thread-container {
+    background: #141517;
 }
 
 .reply-btn {

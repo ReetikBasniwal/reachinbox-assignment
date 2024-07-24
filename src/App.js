@@ -11,6 +11,7 @@ import { handleAuthCallback } from "./redux/reducers/authSlice";
 function App() {
 
   const { user } = useSelector((state) => state.auth);
+  const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,13 +24,9 @@ function App() {
     }
   },[dispatch, user])
 
-  useEffect(() => {
-    console.log(user, typeof user, "user in app");
-  }, [user]);
-
   return (
     <Router>
-      <div className="app">
+      <div className={`app ${isDarkMode ? 'dark': ''}`}>
         {user && <Sidebar />}
         <Routes>
           <Route path="/login" element={<Login />} />

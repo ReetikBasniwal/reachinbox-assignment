@@ -1,31 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './mailconv.css'
 import EachMail from './EachMail'
 import EmailReply from '../../modals/EmailReply/EmailReply'
-
-const temp = {
-    "id": 4,
-    "fromName": "Shaw Adley",
-    "fromEmail": "shaw@getmemeetings.com",
-    "toName": "",
-    "toEmail": "mitrajit2022@gmail.com",
-    "cc": null,
-    "bcc": null,
-    "threadId": 2,
-    "messageId": "<a5dcWbm1ac5e46d38746648c3e2f6d2c@getmemeetings.com>",
-    "inReplyTo": "<4a5cWemdbfda475fabaf856ef5e806a7@gmail.com>",
-    "references": "<4a5cWemdbfda475fabaf856ef5e806a7@gmail.com>",
-    "subject": "Test mail",
-    "body": "<p>Test mail</p>",
-    "isRead": true,
-    "folder": "INBOX",
-    "uid": 594,
-    "sentAt": "2023-11-23T04:08:45.000Z",
-    "archivedAt": null,
-    "createdAt": "2023-11-23T07:38:46.000Z",
-    "updatedAt": "2023-11-23T07:38:46.000Z",
-    "deletedAt": null
-}
+import { useSelector } from 'react-redux'
 
 const messages = [
     {
@@ -79,17 +56,37 @@ const messages = [
 const MailConv = ({mail}) => {
 
   const [showWriteMail, setShowWriteMail] = useState(false);
-  
+
+  const selectedMail = useSelector(state => state.oneboxReducer.selectedMail);
+  const isDarkMode = useSelector(state => state.oneboxReducer.isDarkMode);
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'r' || event.key === 'R') {
+        setShowWriteMail(!showWriteMail);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
+
+  if(!selectedMail) return;
+
   return (
-    <div className='mail-conv-container grow w-full relative'>
-      <div className='flex mail-conv-header'>
+    <div className={`mail-conv-container grow w-full relative dark:bg-black ${isDarkMode ? 'border-dark' : 'border-light'}`}>
+      <div className={`flex mail-conv-header ${isDarkMode ? 'border-dark' : 'border-light'}`}>
         <div className='flex flex-col'>
-            <span className='text-md text-white'>{temp.fromName}</span>
-            <span className='text-slate-500 text-xs'>{temp.fromEmail}</span>
+            <span className='text-md text-black dark:text-white'>{selectedMail.fromName}</span>
+            <span className='text-slate-600 text-xs'>{selectedMail.fromEmail}</span>
         </div>
       </div>
 
-      <div className='p-4'>
+      <div className={`p-4 overflow-y-auto h-full bg-red ${isDarkMode ? '' : 'light-bg'}`}>
         {messages.map((msg) => (
           <EachMail thread={msg} key={msg.id}/>
           )
@@ -101,7 +98,7 @@ const MailConv = ({mail}) => {
         className="reply-btn text-sm font-normal text-white"
         onClick={() => setShowWriteMail(true)}
       >Reply</button>
-      {showWriteMail && <EmailReply isOpen={showWriteMail} closeModal={() => { setShowWriteMail(false); console.log("calling")}}/>}
+      {showWriteMail && <EmailReply isOpen={showWriteMail} closeModal={() => { setShowWriteMail(false); console.log("calling")}} info={selectedMail}/>}
     </div>
   )
 }
