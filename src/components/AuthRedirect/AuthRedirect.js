@@ -17,7 +17,6 @@ const AuthCallback = () => {
       dispatch(handleAuthCallback(token)).unwrap()
         .then(() => {
           navigate('/onebox');
-          console.log(token, "full filling")
         })
         .catch((error) => {
           console.error('Login failed:', error);
