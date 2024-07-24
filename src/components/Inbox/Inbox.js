@@ -16,7 +16,7 @@ const Inbox = () => {
     useEffect(() => {
         if(mails.length > 0){
             let count = 0;
-            mails.foreach(mail => {
+            mails.forEach(mail => {
                 if(!mail.isRead) count++;
             })
             setUnReadCount(count);
