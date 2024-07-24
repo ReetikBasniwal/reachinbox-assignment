@@ -73,6 +73,8 @@ const MailConv = ({mail}) => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
+
+    // eslint-disable-next-line
   }, []);
 
   if(!selectedMail) return;

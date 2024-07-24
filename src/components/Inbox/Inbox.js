@@ -16,13 +16,13 @@ const Inbox = () => {
     useEffect(() => {
         if(mails.length > 0){
             let count = 0;
-            mails.map(mail => {
+            mails.foreach(mail => {
                 if(!mail.isRead) count++;
             })
             setUnReadCount(count);
             dispatch(oneboxAction.setSelectedMail(mails[0]));
         }
-    },[mails])
+    },[mails,dispatch])
     
   return (
     <div className={`flex-none inbox-container dark:bg-black ${isDarkMode ? 'border-dark' : 'border-light'}`}>

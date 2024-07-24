@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import './sidebar.css';
 import { useSelector } from 'react-redux';
 import { ReactComponent as MailIcon } from '../../assets/icons/Logo12.svg';
