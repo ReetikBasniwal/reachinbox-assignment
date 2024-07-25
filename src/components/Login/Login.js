@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './login.css'
 import { FcGoogle } from 'react-icons/fc';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { googleLogin } from '../../redux/reducers/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { user } = useSelector((state) => state.auth);
+  const authToken = useSelector(state => state.auth.token);
+
+  useEffect(() => {
+    if(user && authToken) navigate('/onebox');
+  },[user, authToken, navigate])
 
   const handleGoogleLogin = () => {
     dispatch(googleLogin());

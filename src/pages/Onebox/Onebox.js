@@ -7,11 +7,18 @@ import axios from 'axios';
 import { BASE_URL } from '../../config/global_config';
 import MailConv from '../../components/MailConversation/MailConv';
 import SenderDetail from '../../components/SenderDetail/SenderDetail';
+import { useNavigate } from 'react-router-dom';
 
 function Onebox() {
   const mails = useSelector(state => state.oneboxReducer.mails);
   const { user } = useSelector((state) => state.auth);
   const authToken = useSelector(state => state.auth.token);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!user || !authToken) navigate('/login');
+  },[user, authToken, navigate])
 
   useEffect(() => {
     // if(mails.length === 0 && authToken?.length > 0){
@@ -34,8 +41,6 @@ function Onebox() {
     // }
     
   }, [mails, authToken])
-
-  if(!user || !authToken) return;
 
   return (
     <div className="onebox">
